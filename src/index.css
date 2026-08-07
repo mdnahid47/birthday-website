@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&display=swap");
+
+@import "tailwindcss";
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Poppins",sans-serif;
+    overflow-x:hidden;
+    background:#09090f;
+    color:white;
+}
+
+.handwriting{
+    font-family:"Dancing Script",cursive;
+}
+
+.gradient-text{
+    background:linear-gradient(90deg,#ff4d8d,#ff7eb3,#ffd166);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.glass{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.glow{
+    text-shadow:
+    0 0 10px #ff4d8d,
+    0 0 25px #ff4d8d,
+    0 0 50px #ff4d8d;
+}
+
+.hero-bg{
+    background:
+    radial-gradient(circle at top,#ff4d8d33,transparent 50%),
+    radial-gradient(circle at bottom,#7c3aed33,transparent 50%),
+    #09090f;
+}
+
+button{
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+}
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ff4d8d;
+    border-radius:20px;
+}
