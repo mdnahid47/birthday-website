@@ -2,44 +2,36 @@ import { useEffect, useState } from "react";
 
 import Countdown from "./components/Countdown";
 import Birthday from "./components/Birthday";
+import Music from "./components/Music";
 
 /*
-=========================================
-DEVELOPMENT MODE
+  DEVELOPMENT MODE
 
-
-false = Countdown → Birthday
-=========================================
+  true  = সরাসরি Birthday page
+  false = Countdown → Birthday
 */
-
-const DEV_MODE = false;
+const DEV_MODE = true;
 
 /*
-=========================================
-REAL BIRTHDAY
-02 September 2026
-=========================================
+  Birthday Date
 */
-
 const BIRTHDAY_DATE = new Date("2026-09-27T00:00:00");
 
 export default function App() {
-
   const [isUnlocked, setIsUnlocked] = useState(false);
 
   useEffect(() => {
-
+    // Development mode
     if (DEV_MODE) {
       setIsUnlocked(true);
       return;
     }
 
+    // Birthday check
     const checkBirthday = () => {
-
       if (new Date() >= BIRTHDAY_DATE) {
         setIsUnlocked(true);
       }
-
     };
 
     checkBirthday();
@@ -47,36 +39,26 @@ export default function App() {
     const interval = setInterval(checkBirthday, 1000);
 
     return () => clearInterval(interval);
-
   }, []);
 
   return (
-
     <main
       className="
-      min-h-screen
-      hero-bg
-      overflow-hidden
-      text-white
+        min-h-screen
+        hero-bg
+        overflow-hidden
+        text-white
       "
     >
+      {/* Background Music */}
+      <Music />
 
-      {
-
-        isUnlocked ?
-
-          <Birthday />
-
-          :
-
-          <Countdown
-            birthdayDate={BIRTHDAY_DATE}
-          />
-
-      }
-
+      {/* Countdown / Birthday */}
+      {isUnlocked ? (
+        <Birthday />
+      ) : (
+        <Countdown birthdayDate={BIRTHDAY_DATE} />
+      )}
     </main>
-
   );
-
 }
