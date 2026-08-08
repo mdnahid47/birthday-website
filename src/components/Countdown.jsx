@@ -83,7 +83,7 @@ export default function Countdown({ birthdayDate }) {
         </p>
 
         <p className="mt-2 text-sm text-pink-300">
-          Opens on 02 September 2026
+          Opens on 27 September 2026
         </p>
 
         <div className="mt-12 grid grid-cols-2 gap-5 md:grid-cols-4">

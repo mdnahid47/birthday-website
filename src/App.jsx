@@ -7,7 +7,7 @@ import Birthday from "./components/Birthday";
 =========================================
 DEVELOPMENT MODE
 
-true  = সরাসরি Birthday Page
+
 false = Countdown → Birthday
 =========================================
 */
@@ -21,7 +21,7 @@ REAL BIRTHDAY
 =========================================
 */
 
-const BIRTHDAY_DATE = new Date("2026-09-02T00:00:00");
+const BIRTHDAY_DATE = new Date("2026-09-27T00:00:00");
 
 export default function App() {
 
